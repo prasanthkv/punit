@@ -1,4 +1,4 @@
-package io.github.kvlabs.punit;
+package io.github.kvlabs.punit.runner;
 
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runners.BlockJUnit4ClassRunner;

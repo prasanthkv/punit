@@ -1,7 +1,7 @@
 package io.github.kvlabs.punit.it;
 
-import io.github.kvlabs.punit.PUnitRunner;
-import io.github.kvlabs.punit.PackageToScan;
+import io.github.kvlabs.punit.runner.PUnitRunner;
+import io.github.kvlabs.punit.runner.PackageToScan;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

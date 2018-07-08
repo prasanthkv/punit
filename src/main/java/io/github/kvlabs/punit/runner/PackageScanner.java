@@ -1,5 +1,7 @@
-package io.github.kvlabs.punit;
+package io.github.kvlabs.punit.runner;
 
+
+import io.github.kvlabs.punit.Ignore;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,7 +13,7 @@ import java.util.*;
  *
  * @author kvprasanth
  */
-public class PackageScanner {
+class PackageScanner {
 
     /**
      * Scans all classes accessible from the context class loader which belong to the given package and subpackages.
@@ -21,7 +23,7 @@ public class PackageScanner {
      * @throws ClassNotFoundException
      * @throws IOException
      */
-    public static List<Class<?>> getClasses(String packageName) throws ClassNotFoundException, IOException {
+    static List<Class<?>> getClasses(String packageName) throws ClassNotFoundException, IOException {
         String path = packageName.replace('.', '/');
         Enumeration resources = Thread.currentThread().getContextClassLoader().getResources(path);
         List<File> dirs = new ArrayList();

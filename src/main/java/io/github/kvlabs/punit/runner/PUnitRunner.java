@@ -1,4 +1,4 @@
-package io.github.kvlabs.punit;
+package io.github.kvlabs.punit.runner;
 
 
 import org.apache.commons.collections4.CollectionUtils;
