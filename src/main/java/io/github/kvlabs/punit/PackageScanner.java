@@ -70,6 +70,6 @@ public class PackageScanner {
      * @return true if this class which need to be ignored
      */
     private static boolean ignore(Class<?> clazz){
-        return (clazz.getAnnotation(Ignore.class) != null);
+        return  clazz.isEnum() || (clazz.getAnnotation(Ignore.class) != null);
     }
 }
