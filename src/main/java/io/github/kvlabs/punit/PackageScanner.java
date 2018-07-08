@@ -54,9 +54,22 @@ public class PackageScanner {
                 assert !file.getName().contains(".");
                 classes.addAll(findClasses(file, packageName + "." + file.getName()));
             } else if (file.getName().endsWith(".class")) {
-                classes.add(Class.forName(packageName + '.' + file.getName().substring(0, file.getName().length() - 6)));
+                Class<?> currentClass = Class.forName(packageName + '.' + file.getName().substring(0, file.getName().length() - 6));
+                if(!ignore(currentClass)) {
+                    classes.add(currentClass);
+                }
             }
         }
         return classes;
+    }
+
+    /**
+     * Checks the given class need to be ignored
+     *
+     * @param clazz to be evaluated
+     * @return true if this class which need to be ignored
+     */
+    private static boolean ignore(Class<?> clazz){
+        return (clazz.getAnnotation(Ignore.class) != null);
     }
 }

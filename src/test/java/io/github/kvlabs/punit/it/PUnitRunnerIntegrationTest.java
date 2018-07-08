@@ -19,6 +19,7 @@ public class PUnitRunnerIntegrationTest {
     @Test
     public void test(){
         Assert.assertNotNull(claszz);
+        Assert.assertFalse(claszz.getName().contains("IgnoreThisPojo"));
     }
 
 }
